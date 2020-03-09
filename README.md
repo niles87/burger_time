@@ -10,7 +10,7 @@ This is a single page style web application that allows the user to "devour" pre
 
 ## How To Use
 
-To run a local instance of this application clone the repo. Once cloned navigate the the folder in the terminal run `npm i` or `npm install` to load all the dependencies needed. In `mySQL workbench` copy and run `schema.sql` to create the database needed to run. After the database is created and the dependencies are installed on, `config/connection.js` change the database configuration needed for the `SQL` server to run locally. When that is saved run the command `node server` to start the server then navigate to `localhost:8888/` and the page will be displayed.
+To run a local instance of this application clone the repo. Once cloned navigate the the folder in the terminal run `npm i` or `npm install` to load all the dependencies needed. In `mySQL workbench` copy and run `schema.sql` to create the database needed to run. After the database is created and the dependencies are installed, on `config/connection.js` change the database configuration needed for the `SQL` server to run locally. When that is saved run the command `node server` to start the server then navigate to `localhost:8888/` and the page will be displayed.
 
 To use as a web app [click this link]() to the deployed page.
 
