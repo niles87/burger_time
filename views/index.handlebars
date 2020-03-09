@@ -1,33 +1,37 @@
-<h1>Burgers</h1>
-
-<h2>Burgers to Eat</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{>burgers/burger_block devoured=true}}
-    {{/unless}}
-    {{/each}}
-</ul>
-
-
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    {{>burgers/burger_block devoured=false}}
-    {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Add Burger</h2>
-
-<form action="" class="create-form">
-
-    <div class="form-group">
-        <label for="burger">Burger Name:</label>
-        <input type="text" id="burger" name="name">
+<div class="container">
+    <h1>Burgers</h1>
+    <div class="flex-container">
+        <div>
+            <h2>Burgers to Eat</h2>
+            <ul id="available-burgers">
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{>burgers/burger_block devoured=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div>
+            <h2>Devoured Burgers</h2>
+            <ul id="eaten-burgers">
+                {{#each burgers}}
+                {{#if devoured}}
+                {{>burgers/burger_block devoured=false}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
     </div>
 
-    <button type="submit">Add Burger</button>
+    <form action="" class="create-burger">
+        <h2>Add Burger</h2>
 
-</form>
+        <div class="form-group">
+            <label for="burger">Burger Name:</label>
+            <input type="text" id="burger" name="name">
+        </div>
+
+        <button type="submit">Add Burger</button>
+
+    </form>
+</div>
