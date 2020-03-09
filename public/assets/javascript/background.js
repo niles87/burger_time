@@ -2,47 +2,44 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 ctx.canvas.width = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
-let particleArray;
+let imgArray;
 const png = document.getElementById("burgerImg");
 
-function Particle(x, y, directionX, directionY, size, color) {
+function Img(x, y, directionX, directionY, width, height) {
   this.x = x;
   this.y = y;
   this.directionX = directionX;
   this.directionY = directionY;
-  this.size = size;
-  this.color = color;
+  this.width = width;
+  this.height = height;
 }
-Particle.prototype.draw = function() {
-  ctx.beginPath();
-  ctx.arc(this.x, this.y, this.size, Math.PI * 2, false);
-  ctx.fillStyle = this.color;
-  ctx.fill();
+Img.prototype.drawImg = function() {
+  ctx.drawImage(png, this.x, this.y, this.width, this.height);
 };
 
-Particle.prototype.updateParticle = function() {
-  if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+Img.prototype.updateImg = function() {
+  if (this.x + this.width > canvas.width || this.x - this.width < -200) {
     this.directionX = -this.directionX;
   }
-  if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+  if (this.y + this.height > canvas.height || this.y - this.height < -120) {
     this.directionY = -this.directionY;
   }
   this.x += this.directionX;
   this.y += this.directionY;
-  this.draw();
+  this.drawImg();
 };
 
 function init() {
-  particleArray = [];
-  for (let i = 0; i < 20; i++) {
-    let size = Math.random() * 20 + 5;
-    let x = Math.random() * (innerWidth - size * 2);
-    let y = Math.random() * (innerHeight - size * 2);
-    let directionX = Math.random() * 2 - 0.2;
-    let directionY = Math.random() * 2 - 0.2;
-    let color = "#f3e84f";
+  imgArray = [];
+  for (let i = 0; i < 1; i++) {
+    let width = 200;
+    let height = width * 0.6;
+    let x = Math.random() * (innerWidth - width * 2);
+    let y = Math.random() * (innerHeight - height * 2);
+    let directionX = (Math.random() - 0.5) * 5;
+    let directionY = (Math.random() - 0.5) * 5;
 
-    particleArray.push(new Particle(x, y, directionX, directionY, size, color));
+    imgArray.push(new Img(x, y, directionX, directionY, width, height));
   }
 }
 
@@ -50,8 +47,8 @@ function beginAnimation() {
   requestAnimationFrame(beginAnimation);
   ctx.clearRect(0, 0, innerWidth, innerHeight);
 
-  for (let j = 0; j < particleArray.length; j++) {
-    particleArray[j].updateParticle();
+  for (let j = 0; j < imgArray.length; j++) {
+    imgArray[j].updateImg();
   }
 }
 
