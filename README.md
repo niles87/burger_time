@@ -2,7 +2,7 @@
 
 ## App Visuals
 
-<img src="/public/assets/images/burgertime.gif" alt"gif">
+<img src="public/assets/images/burgertime.gif">
 
 ## Overview
 
