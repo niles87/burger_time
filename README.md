@@ -2,7 +2,9 @@
 
 ## App Visuals
 
+<p align="center">
 <img src="public/assets/images/burgertime.gif">
+</p>
 
 ## Overview
 
