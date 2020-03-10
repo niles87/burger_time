@@ -18,10 +18,10 @@ Img.prototype.drawImg = function() {
 };
 
 Img.prototype.updateImg = function() {
-  if (this.x + this.width > canvas.width || this.x - this.width < -200) {
+  if (this.x + this.width > canvas.width || this.x - this.width < -205) {
     this.directionX = -this.directionX;
   }
-  if (this.y + this.height > canvas.height || this.y - this.height < -120) {
+  if (this.y + this.height > canvas.height || this.y - this.height < -155) {
     this.directionY = -this.directionY;
   }
   this.x += this.directionX;
@@ -33,7 +33,7 @@ function init() {
   imgArray = [];
   for (let i = 0; i < 1; i++) {
     let width = 200;
-    let height = width * 0.6;
+    let height = width * 0.75;
     let x = Math.random() * (innerWidth - width * 2);
     let y = Math.random() * (innerHeight - height * 2);
     let directionX = (Math.random() - 0.5) * 5;
