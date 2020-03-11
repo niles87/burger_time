@@ -18,10 +18,10 @@ Img.prototype.drawImg = function() {
 };
 
 Img.prototype.updateImg = function() {
-  if (this.x + this.width > canvas.width || this.x - this.width < -205) {
+  if (this.x + this.width > canvas.width || this.x - this.width < -210) {
     this.directionX = -this.directionX;
   }
-  if (this.y + this.height > canvas.height || this.y - this.height < -155) {
+  if (this.y + this.height > canvas.height || this.y - this.height < -160) {
     this.directionY = -this.directionY;
   }
   this.x += this.directionX;
