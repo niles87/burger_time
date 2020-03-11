@@ -5,21 +5,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#311444, #6646b1, #aa8bff);
+  background: linear-gradient(#7e3003, #ad7202, #d89400, #fded05);
 }
 html {
-  background: linear-gradient(#311444, #6646b1, #aa8bff);
+  background: linear-gradient(#7e3003, #ad7202, #d89400, #fded05);
   background-size: cover;
 }
 
 body {
   font-family: sans-serif;
-  color: #a5006e;
 }
 h1 {
   text-align: center;
   font-size: 50px;
   color: #e0bf00;
+  text-shadow: 2px 2px 3px #f35107;
 }
 ul {
   list-style-type: none;
