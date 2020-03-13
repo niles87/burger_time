@@ -1,14 +1,12 @@
 $(function() {
   $(".devour").on("click", function(event) {
-    console.log($(this));
     var id = $(this).data("id");
-    console.log(id);
+
     var isDevoured = $(this).data("devoured");
-    console.log(isDevoured);
+
     var devouredState = { devoured: isDevoured };
 
     $.ajax("/api/burgers/" + id, { type: "PUT", data: devouredState }).then(function() {
-      console.log("changed sleep to", isDevoured);
       location.reload();
     });
   });
