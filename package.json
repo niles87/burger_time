@@ -25,6 +25,6 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
-    "minimist": ">=0.2.1"
+    "minimist": ">=1.2.6"
   }
 }
